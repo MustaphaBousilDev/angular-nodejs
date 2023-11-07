@@ -3,26 +3,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostCreateComponent } from './post-create/post-create.component';
+import { PostCreateComponent } from './posts/post-create/post-create.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+//components
+import { HomeModule } from './pages/home/Home.module';
 //material design
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import { NavbarClientComponent } from './components/navbar-client/navbar-client.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostCreateComponent
+    PostCreateComponent,
+    NavbarClientComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    BrowserAnimationsModule,  //BrowserAnimationsModule is required for Angular Material its for animations
-    MatInputModule,  //MatInputModule is required for Angular Material its for input  fields 
-    MatCardModule , //MatCardModule is required for Angular Material its for card  fields
-    MatButtonModule //MatButtonModule is required for Angular Material its for button  fields
+    BrowserAnimationsModule,  
+    MatInputModule,  
+    MatCardModule , 
+    MatButtonModule,
+    //components modules 
+    HomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

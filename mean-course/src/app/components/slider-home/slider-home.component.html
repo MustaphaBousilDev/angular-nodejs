@@ -1,0 +1,20 @@
+
+<div class="relative h-full">
+    <div>
+      <div (click)="goToPrevious()" class="absolute top-[50%] translate-y-[-50%] left-[32px] text-3xl text-white z-[1] cursor-pointer">❰</div>
+      <div (click)="goToNext()"     class=" absolute text-3xl top-[50%] text-white z-[1]  cursor-pointer right-[32px] translate-y-[-50%]">❱</div>
+    </div>
+    <div
+      class="w-full h-full bg-center bg-cover   transition duration-300 ease-in-out"
+      [ngStyle]="{ 'background-image': getCurrentSlideUrl() }"
+    ></div>
+    <div class="flex justify-center">
+      <div
+        *ngFor="let slide of slides; let slideIndex = index"
+        class=" my-0 mx-[3px] text-xl cursor-pointer"
+        (click)="goToSlide(slideIndex)"
+      >
+        ●
+      </div>
+    </div>
+  </div>
